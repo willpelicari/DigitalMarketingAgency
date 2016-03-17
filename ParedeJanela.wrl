@@ -1,0 +1,60 @@
+#VRML V2.0 utf8
+#
+#Parede Fundo
+# - Compõem as paredes que não possuem janelas na sala
+#
+
+#Base da Parede
+Transform {
+	translation -3 -1 3.3
+	children[	
+		Shape {
+			appearance Appearance{
+				material Material{ diffuseColor 1 1 1}
+			}
+			geometry Box{ size 3.85 1 .2}
+		}
+	]
+}
+
+#Janela
+Transform {
+	translation -2.95 0 3.3
+	children[	
+		Shape {
+			appearance Appearance{
+				material Material{
+					diffuseColor .8705 .9686 1
+					transparency .5
+				}
+			}
+			geometry Box{ size 3.75 1 .1}
+		}
+	]
+}
+
+#Topo da Parede
+Transform {
+	translation 0 1 3.3
+	children[	
+		Shape {
+			appearance Appearance{
+				material Material{ diffuseColor 1 1 1}
+			}
+			geometry Box{ size 10 1 .2}
+		}
+	]
+}
+
+#Parede Banheiro
+Transform {
+	translation 2.45 -.5 3.3
+	children[	
+		Shape {
+			appearance Appearance{
+				material Material{ diffuseColor 1 1 1}
+			}
+			geometry Box{ size 5.1 2 .2}
+		}
+	]
+}

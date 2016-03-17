@@ -1,0 +1,57 @@
+#VRML V2.0 utf8
+#
+# SALA TWO Digital
+#
+# - Representação Digital da TWO Digital, empresa de marketing Digital
+
+# ViewPoint
+Viewpoint {
+  description "Visão Inicial"
+  position -11 -.5 -1
+  orientation 0 1 0 -1.5966
+  jump TRUE
+}
+NavigationInfo {
+  headlight FALSE
+  avatarSize 0
+}
+Background {
+}
+DirectionalLight {
+  direction -1.0 -1.0 -1.0
+  intensity 0.3
+}
+
+##@ Instalações Prediais
+
+# @ Instalações Prediais -> Parede do Fundo
+Inline { url "ParedeInteira.wrl" }
+
+# @ Instalações Prediais -> Parede com Janela
+Inline{ url "ParedeJanela.wrl"}
+
+# @ Instalações Prediais -> Parede Laranja
+Inline{ url "ParedeLaranja.wrl"}
+
+# @ Instalações Prediais -> Parede Porta
+Inline{ url "ParedePorta.wrl"}
+
+# @ Instalações Prediais -> Paredes Internas Banheiro
+Inline{ url "ParedesInternasBanheiros.wrl"}
+
+# @ Instalações Prediais -> Parede Externo Banheiro
+Inline{ url "ParedeExternoBanheiro.wrl"}
+
+# @ Instalações Prediais -> Parede Porta -> Porta
+Inline{ url "ParedePorta.Porta.wrl"}
+
+# @ Instalações Prediais -> Chão
+Inline { url "Chao.wrl" }
+
+# @ Instalações Prediais -> Chão
+Inline { url "Teto.wrl" }
+
+# @ Móveis
+Inline { url "Moveis.wrl" }
+
+

@@ -1,0 +1,367 @@
+#VRML V2.0 utf8
+#
+#Teto
+# - Compoe o piso do chão
+#
+
+#Transform {
+#	translation 0 1.5 -2.15
+#	children[	
+#		Shape {
+#			appearance Appearance{
+#				textureTransform TextureTransform {
+#					scale 15.0 10.5
+#				}								 
+#			material Material {diffuseColor 1 1 1}
+#
+#			}
+#			geometry Box{ size 10 .05 11.1}
+#		}
+#	]
+#}
+
+#Lampadas
+
+#Lampada 1 da sala principal
+Transform{
+	translation	-2.5 1.35 0
+	rotation 0 0 1 1.5966
+	children[
+		DEF Lampada1 Shape {
+			appearance Appearance {
+				material DEF BulbMaterial1 Material {
+                   diffuseColor 0 0 0
+                   emissiveColor 1 1 1
+				}
+			}
+			geometry Cylinder{
+				radius .06
+			    height 4
+			}
+		}
+
+		DEF	toqueF1 TouchSensor {}
+	]
+}
+
+#Lampada 2 da sala principal
+Transform{
+	translation	-2.5 1.35 -3.5
+	rotation 0 0 1 1.5966
+	children[
+		DEF Lampada2 Shape {
+			appearance Appearance {
+				material DEF BulbMaterial2 Material {
+                   diffuseColor 0 0 0
+                   emissiveColor 1 1 1
+				}
+			}
+			geometry Cylinder{
+				radius .06
+			    height 4
+			}
+		}
+
+		DEF	toqueF2 TouchSensor {}
+	]
+}
+
+#Lampada Banheiro Masculino
+Transform{
+	translation	2.5 1.35 -5.5
+	scale 1 .75 1
+	rotation 1 0 1 1.5966
+	children[
+		DEF Lampada3 Shape {
+			appearance Appearance {
+				material DEF BulbMaterial3 Material {
+                   diffuseColor 0 0 0
+                   emissiveColor 1 1 1
+				}
+			}
+			geometry Cylinder{
+				radius .06
+			    height 4
+			}
+		}
+
+		DEF	toqueF3 TouchSensor {}
+	]
+}
+
+#Lampada Banheiro Feminino
+Transform{
+	translation	2.5 1.35 1.6
+	scale 1 .75 1
+	rotation 1 0 1 1.5966
+	children[
+		DEF Lampada4 Shape {
+			appearance Appearance {
+				material DEF BulbMaterial4 Material {
+                   diffuseColor 0 0 0
+                   emissiveColor 1 1 1
+				}
+			}
+			geometry Cylinder{
+				radius .06
+			    height 4
+			}
+		}
+
+		DEF	toqueF4 TouchSensor {}
+	]
+}
+
+#Lampada Café
+Transform{
+	translation	3.5 1.35 -1.6
+	scale 1 .5 1
+	rotation 1 0 0 1.5966
+	children[
+		DEF Lampada5 Shape {
+			appearance Appearance {
+				material DEF BulbMaterial5 Material {
+                   diffuseColor 0 0 0
+                   emissiveColor 1 1 1
+				}
+			}
+			geometry Cylinder{
+				radius .06
+			    height 4
+			}
+		}
+
+		DEF	toqueF5 TouchSensor {}
+	]
+}
+
+DEF	Luz1 SpotLight {
+	ambientIntensity .6
+	intensity .5
+	direction 0.0 -1 0.0
+	location -2.5 1.35 0
+	beamWidth .8
+	cutOffAngle 1.571
+}
+
+DEF	Luz2 SpotLight {
+	ambientIntensity .6
+	intensity .5
+	direction 0.0 -1 0.0
+	location -2.5 1.35 -3.5
+	beamWidth .8
+	cutOffAngle 1.571
+}
+
+DEF	Luz3 SpotLight {
+	ambientIntensity .6
+	intensity .5
+	direction 0.0 -1 0.0
+	location 2.5 1.35 -5.5
+	beamWidth .8
+	cutOffAngle 1.571
+}
+
+DEF	Luz4 SpotLight {
+	ambientIntensity .6
+	intensity .5
+	direction 0.0 -1 0.0
+	location 2.5 1.35 1.6
+	beamWidth .8
+	cutOffAngle 1.571
+}
+
+DEF	Luz5 SpotLight {
+	ambientIntensity .6
+	intensity .5
+	direction 0.0 -1 0.0
+	location 3.5 1.35 -1.6
+	beamWidth .8
+	cutOffAngle 1.571
+}
+
+DEF Toggle1 Script {
+	field    SFBool on TRUE
+	eventIn  SFBool set_active
+	eventOut SFBool on_changed
+
+	# use 'javascript' on newer browsers
+	url "vrmlscript:
+		function set_active( b, tm ) {
+			if ( b == FALSE ) return;
+			if ( on == TRUE ) on = FALSE;
+			else              on = TRUE;
+			on_changed = on;
+		}"
+}
+
+DEF Toggle2 Script {
+	field    SFBool on TRUE
+	eventIn  SFBool set_active
+	eventOut SFBool on_changed
+
+	# use 'javascript' on newer browsers
+	url "vrmlscript:
+		function set_active( b, tm ) {
+			if ( b == FALSE ) return;
+			if ( on == TRUE ) on = FALSE;
+			else              on = TRUE;
+			on_changed = on;
+		}"
+}
+
+DEF Toggle3 Script {
+	field    SFBool on TRUE
+	eventIn  SFBool set_active
+	eventOut SFBool on_changed
+
+	# use 'javascript' on newer browsers
+	url "vrmlscript:
+		function set_active( b, tm ) {
+			if ( b == FALSE ) return;
+			if ( on == TRUE ) on = FALSE;
+			else              on = TRUE;
+			on_changed = on;
+		}"
+}
+
+DEF Toggle4 Script {
+	field    SFBool on TRUE
+	eventIn  SFBool set_active
+	eventOut SFBool on_changed
+
+	# use 'javascript' on newer browsers
+	url "vrmlscript:
+		function set_active( b, tm ) {
+			if ( b == FALSE ) return;
+			if ( on == TRUE ) on = FALSE;
+			else              on = TRUE;
+			on_changed = on;
+		}"
+}
+
+DEF Toggle5 Script {
+	field    SFBool on TRUE
+	eventIn  SFBool set_active
+	eventOut SFBool on_changed
+
+	# use 'javascript' on newer browsers
+	url "vrmlscript:
+		function set_active( b, tm ) {
+			if ( b == FALSE ) return;
+			if ( on == TRUE ) on = FALSE;
+			else              on = TRUE;
+			on_changed = on;
+		}"
+}
+
+DEF ColorSelector1 Script {
+  field        SFColor	offColor 0 0 0
+  field        SFColor	onColor 1 1 1
+  eventOut     SFColor	color_changed
+  eventIn      SFBool	set_selection
+
+	url [ "javascript:
+		function set_selection( b, tm ) {
+			if ( b == TRUE )
+				color_changed = onColor;
+			else
+				color_changed = offColor;
+		}
+
+    
+" ]
+}
+
+DEF ColorSelector2 Script {
+  field        SFColor	offColor 0 0 0
+  field        SFColor	onColor 1 1 1
+  eventOut     SFColor	color_changed
+  eventIn      SFBool	set_selection
+
+	url [ "javascript:
+		function set_selection( b, tm ) {
+			if ( b == TRUE )
+				color_changed = onColor;
+			else
+				color_changed = offColor;
+		}
+
+    
+" ]
+}
+
+DEF ColorSelector3 Script {
+  field        SFColor	offColor 0 0 0
+  field        SFColor	onColor 1 1 1
+  eventOut     SFColor	color_changed
+  eventIn      SFBool	set_selection
+
+	url [ "javascript:
+		function set_selection( b, tm ) {
+			if ( b == TRUE )
+				color_changed = onColor;
+			else
+				color_changed = offColor;
+		}
+
+    
+" ]
+}
+
+DEF ColorSelector4 Script {
+  field        SFColor	offColor 0 0 0
+  field        SFColor	onColor 1 1 1
+  eventOut     SFColor	color_changed
+  eventIn      SFBool	set_selection
+
+	url [ "javascript:
+		function set_selection( b, tm ) {
+			if ( b == TRUE )
+				color_changed = onColor;
+			else
+				color_changed = offColor;
+		}
+
+    
+" ]
+}
+
+DEF ColorSelector5 Script {
+  field        SFColor	offColor 0 0 0
+  field        SFColor	onColor 1 1 1
+  eventOut     SFColor	color_changed
+  eventIn      SFBool	set_selection
+
+	url [ "javascript:
+		function set_selection( b, tm ) {
+			if ( b == TRUE )
+				color_changed = onColor;
+			else
+				color_changed = offColor;
+		}
+
+    
+" ]
+}
+
+ROUTE toqueF1.isActive TO Toggle1.set_active
+ROUTE toqueF2.isActive TO Toggle2.set_active
+ROUTE toqueF3.isActive TO Toggle3.set_active
+ROUTE toqueF4.isActive TO Toggle4.set_active
+ROUTE toqueF5.isActive TO Toggle5.set_active
+ROUTE Toggle1.on_changed TO Luz1.set_on
+ROUTE Toggle2.on_changed TO Luz2.set_on
+ROUTE Toggle3.on_changed TO Luz3.set_on
+ROUTE Toggle4.on_changed TO Luz4.set_on
+ROUTE Toggle5.on_changed TO Luz5.set_on
+ROUTE Toggle1.on_changed TO ColorSelector1.set_selection
+ROUTE Toggle2.on_changed TO ColorSelector2.set_selection
+ROUTE Toggle3.on_changed TO ColorSelector3.set_selection
+ROUTE Toggle4.on_changed TO ColorSelector4.set_selection
+ROUTE Toggle5.on_changed TO ColorSelector5.set_selection
+ROUTE ColorSelector1.color_changed TO BulbMaterial1.set_emissiveColor
+ROUTE ColorSelector2.color_changed TO BulbMaterial2.set_emissiveColor
+ROUTE ColorSelector3.color_changed TO BulbMaterial3.set_emissiveColor
+ROUTE ColorSelector4.color_changed TO BulbMaterial4.set_emissiveColor
+ROUTE ColorSelector5.color_changed TO BulbMaterial5.set_emissiveColor

@@ -1,0 +1,82 @@
+#VRML V2.0 utf8
+
+#Vaso Sanitário
+Transform{
+	children[
+		#Deposito
+		Transform{
+			translation	0 -.2 -.2
+			children[
+				Shape{
+					appearance Appearance {
+						material Material {diffuseColor .85 .85 .85}
+					}
+					geometry Box{ size .55 .6 .2}
+				}
+			]
+		}
+
+		#Encosto
+		Transform{
+			translation	0 0 0
+			children[
+				Shape{
+					appearance Appearance {
+						material Material {diffuseColor .85 .85 .85}
+					}
+					geometry Box{ size .55 .6 .1}
+				}
+			]
+		}
+
+		#Assento
+		Transform{
+			translation	0 -.2 .2
+			children[
+				Shape{
+					appearance Appearance {
+						material Material {diffuseColor .85 .85 .85}
+					}
+					geometry Cylinder{
+						radius .3
+						height .1
+					}
+				}
+			]
+		}
+
+		#Cone
+		Transform{
+			translation	0 -.45 .2
+			rotation 0 0 1 3.14
+			children[
+				Shape{
+					appearance Appearance {
+						material Material {diffuseColor .85 .85 .85}
+					}
+					geometry Cone{
+						bottomRadius .3
+						height .4
+					}
+				}
+			]
+		}
+
+		#Cone
+		Transform{
+			translation	0 -.6 .2
+			children[
+				Shape{
+					appearance Appearance {
+						material Material {diffuseColor .85 .85 .85}
+					}
+					geometry Cylinder{
+						radius .1
+						height .1
+					}
+				}
+			]
+		}
+	]
+}
+	

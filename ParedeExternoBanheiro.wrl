@@ -1,0 +1,77 @@
+#VRML V2.0 utf8
+#
+#Parede Fundo
+# - Compõem as paredes que não possuem janelas na sala
+#
+
+Transform {
+	translation 4.9 1 -2.2
+	children[	
+		DEF Parede Shape {
+			appearance Appearance{
+				material Material{ diffuseColor 1 1 1}
+			}
+			geometry Box{ size .2 1 10.8}
+		}
+	]
+}
+
+Transform {
+	translation	4.9 -1 -2.2
+	children USE Parede
+}
+
+Transform {
+	translation	4.9	0 3
+	scale 1 1 .05
+	children USE Parede
+}
+
+Transform {
+	translation	4.9	0 0
+	scale 1 1 .1
+	children USE Parede
+}
+
+Transform {
+	translation	4.9	0 -3.3
+	scale 1 1 .1
+	children USE Parede
+}
+
+Transform {
+	translation	4.9	0 -7.3
+	scale 1 1 .05
+	children USE Parede
+}
+
+#Janela
+Transform {
+	translation 4.9 0 -5.5
+	rotation 0 1 0 1.5966
+	children[	
+		DEF Janela Shape {
+			appearance Appearance{
+				material Material{
+					diffuseColor .8705 .9686 1
+					transparency .5
+				}
+			}
+			geometry Box{ size 3.75 1 .1}
+		}
+	]
+}
+
+Transform{
+	translation	4.9 0 -1.4
+	rotation 0 1 0 1.5966
+	scale .75 1 1
+	children USE Janela
+}
+
+Transform{
+	translation	4.9 0 1.4
+	rotation 0 1 0 1.5966
+	scale .75 1 1
+	children USE Janela
+}

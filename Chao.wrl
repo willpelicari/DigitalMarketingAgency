@@ -1,0 +1,24 @@
+#VRML V2.0 utf8
+#
+#Chão
+# - Compoe o piso do chão
+#
+
+Transform {
+	translation 0 -1.5 -2.15
+	children[	
+		Shape {
+			appearance Appearance{
+				texture	ImageTexture { 
+					url "chao.jpg" 
+				}
+				textureTransform TextureTransform {
+					scale 15.0 10.5
+				}								 
+			material Material {diffuseColor 0 1 1}
+
+			}
+			geometry Box{ size 10 .05 11.1}
+		}
+	]
+}

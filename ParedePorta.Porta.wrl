@@ -1,0 +1,385 @@
+#VRML V2.0 utf8
+
+## Porta Esquerda
+DEF	PortaEsquerda Transform {
+	translation -4.9 -.5 -2.04
+	rotation 0 1 0 0
+	center 0 0 -.45
+	children [
+		#Madeira Pintada de Cinza
+		Transform{
+			children[
+				Shape{
+					appearance Appearance{
+						material Material{
+							diffuseColor .8705 .9686 1
+							transparency .5
+					   }
+					}
+					geometry Box{ size .04 2 .95}
+				}	
+			]
+		}
+
+		#Maçaneta
+		Transform{
+			rotation 0 0 1 1.56996
+			translation	-.05 0 .3
+			children[
+				Shape{
+					appearance Appearance{
+						material Material{
+							diffuseColor .8705 .9686 1
+							transparency .5
+					   }
+					}
+					geometry Cylinder{ 
+						radius .08
+						height .02
+					}
+				}
+			]
+		} 
+
+		DEF	SensorToque1 TouchSensor	{
+		}
+		DEF	RelogioPorta1 TimeSensor	{
+			cycleInterval 2
+		}
+		DEF	RelogioPorta2 TimeSensor	{
+			cycleInterval 2
+		}
+		#ABRINDO A PORTA
+		DEF	PortaInterp1 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 0, 0 1 0 1.490]
+		}
+		#FECHANDO A PORTA
+		DEF	PortaInterp2 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 1.490, 0 1 0 0]
+		}
+	]
+}
+
+## Porta Direita Móvel
+DEF	PortaDireita Transform {
+	translation -4.9 -.5 -1.08
+	rotation 0 1 0 0
+	center 0 0 .45
+	children [
+		DEF	Porta Group{
+			children[
+				#Vidro
+				Transform{
+					children[
+						Shape{
+							appearance Appearance{
+								material Material{
+									diffuseColor .8705 .9686 1
+									transparency .5
+							   }
+							}
+							geometry Box{ size .04 2 .95}
+						}	
+					]
+				}
+
+				#Maçaneta
+				Transform{
+					rotation 0 0 1 1.56996
+					translation	-.05 0 -.3
+					children[
+						Shape{
+							appearance Appearance{
+								material Material{
+									diffuseColor .8705 .9686 1
+									transparency .5
+							   }
+							}
+							geometry Cylinder{ 
+								radius .08
+								height .02
+							}
+						}
+					]
+				}
+			]
+		}
+
+		DEF	SensorToque2 TouchSensor	{
+		}
+		DEF	RelogioPorta3 TimeSensor	{
+			cycleInterval 2
+		}
+		DEF	RelogioPorta4 TimeSensor	{
+			cycleInterval 2
+		}
+		#ABRINDO A PORTA
+		DEF	PortaInterp3 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 0, 0 1 0 -1.578]
+		}
+		#FECHANDO A PORTA
+		DEF	PortaInterp4 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 -1.578, 0 1 0 0]
+		}
+	]
+}
+
+#Porta externa
+DEF PortaExterna Transform {
+	translation	-.15 -.5 2.9
+	rotation 0 1 0 1.56996
+	center 0 0 .45
+	children[
+		USE	Porta
+		DEF	SensorToque5 TouchSensor	{
+		}
+		DEF	RelogioPorta9 TimeSensor	{
+			cycleInterval 2
+		}
+		DEF	RelogioPorta0 TimeSensor	{
+			cycleInterval 2
+		}
+		#ABRINDO A PORTA
+		DEF	PortaInterp9 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 1.578, 0 1 0 0]
+		}
+		#FECHANDO A PORTA
+		DEF	PortaInterp0 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 0, 0 1 0 1.578]
+		}
+	]
+}
+
+## Portas Madeira
+DEF PortaInterna1 Transform {
+	translation 1 -.5 -3.75
+	rotation 0 1 0 1.56996
+	center 0 0 .45
+	children [
+		DEF	PortaMadeira Group{
+			children[
+				#Vidro
+				Transform{
+					children[
+						Shape{
+							appearance Appearance{
+								material Material{
+									diffuseColor .8470 .8784 .8901
+							   }
+							}
+							geometry Box{ size .04 2 .95}
+						}	
+					]
+				}
+
+				#Maçaneta
+				Transform{
+					rotation 0 0 1 1.56996
+					translation	-.05 0 -.25
+					children[
+						Shape{
+							appearance Appearance{
+								material Material{
+									diffuseColor .8470 .8784 .8901
+							   }
+							}
+							geometry Sphere{ 
+								radius .04
+							}
+						}
+					]
+				}
+			]
+		}
+
+		DEF	SensorToque3 TouchSensor	{
+		}
+		DEF	RelogioPorta5 TimeSensor	{
+			cycleInterval 2
+		}
+		DEF	RelogioPorta6 TimeSensor	{
+			cycleInterval 2
+		}
+		#ABRINDO A PORTA
+		DEF	PortaInterp5 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 1.578, 0 1 0 0]
+		}
+		#FECHANDO A PORTA
+		DEF	PortaInterp6 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 0, 0 1 0 1.578]
+		}
+	]
+}
+
+## Portas Madeira
+DEF PortaInterna2 Transform {
+	translation .15 -.5 -.5
+	rotation 0 1 0 4.70988
+	center 0 0 .45
+	children [
+		USE PortaMadeira
+		DEF	SensorToque4 TouchSensor	{
+		}
+		DEF	RelogioPorta7 TimeSensor	{
+			cycleInterval 2
+		}
+		DEF	RelogioPorta8 TimeSensor	{
+			cycleInterval 2
+		}
+		#ABRINDO A PORTA
+		DEF	PortaInterp7 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 -1.578, 0 1 0 -3.156]
+		}
+		#FECHANDO A PORTA
+		DEF	PortaInterp8 OrientationInterpolator	{		  
+			key	[0,1]
+			keyValue [0 1 0 -3.156, 0 1 0 -1.578]
+		}
+	]
+}
+
+
+#Animações
+DEF Sc1 Script {
+eventIn SFTime touchedDoor
+eventOut SFTime startTime_Open
+eventOut SFTime startTime_Close
+field SFBool isOpen FALSE
+url "javascript:
+function touchedDoor (val,et) {
+
+isOpen = !isOpen;
+
+if (isOpen) startTime_Open = et;
+else startTime_Close = et;
+
+}
+"
+}
+
+DEF Sc2 Script {
+eventIn SFTime touchedDoor
+eventOut SFTime startTime_Open
+eventOut SFTime startTime_Close
+field SFBool isOpen FALSE
+url "javascript:
+function touchedDoor (val,et) {
+
+isOpen = !isOpen;
+
+if (isOpen) startTime_Open = et;
+else startTime_Close = et;
+
+}
+"
+}
+
+DEF Sc3 Script {
+eventIn SFTime touchedDoor
+eventOut SFTime startTime_Open
+eventOut SFTime startTime_Close
+field SFBool isOpen FALSE
+url "javascript:
+function touchedDoor (val,et) {
+
+isOpen = !isOpen;
+
+if (isOpen) startTime_Open = et;
+else startTime_Close = et;
+
+}
+"
+}
+
+DEF Sc4 Script {
+eventIn SFTime touchedDoor
+eventOut SFTime startTime_Open
+eventOut SFTime startTime_Close
+field SFBool isOpen FALSE
+url "javascript:
+function touchedDoor (val,et) {
+
+isOpen = !isOpen;
+
+if (isOpen) startTime_Open = et;
+else startTime_Close = et;
+
+}
+"
+}
+
+DEF Sc5 Script {
+eventIn SFTime touchedDoor
+eventOut SFTime startTime_Open
+eventOut SFTime startTime_Close
+field SFBool isOpen FALSE
+url "javascript:
+function touchedDoor (val,et) {
+
+isOpen = !isOpen;
+
+if (isOpen) startTime_Open = et;
+else startTime_Close = et;
+
+}
+"
+}
+
+#Porta Esquerda
+ROUTE RelogioPorta1.fraction_changed TO	PortaInterp1.set_fraction
+ROUTE PortaInterp1.value_changed TO	PortaEsquerda.rotation
+ROUTE RelogioPorta2.fraction_changed TO	PortaInterp2.set_fraction
+ROUTE PortaInterp2.value_changed TO	PortaEsquerda.rotation
+
+ROUTE SensorToque1.touchTime TO Sc1.touchedDoor
+ROUTE Sc1.startTime_Open TO RelogioPorta1.startTime
+ROUTE Sc1.startTime_Close TO RelogioPorta2.startTime
+
+#Porta Direita
+ROUTE RelogioPorta3.fraction_changed TO	PortaInterp3.set_fraction
+ROUTE PortaInterp3.value_changed TO	PortaDireita.rotation
+ROUTE RelogioPorta4.fraction_changed TO	PortaInterp4.set_fraction
+ROUTE PortaInterp4.value_changed TO	PortaDireita.rotation
+
+ROUTE SensorToque2.touchTime TO Sc2.touchedDoor
+ROUTE Sc2.startTime_Open TO RelogioPorta3.startTime
+ROUTE Sc2.startTime_Close TO RelogioPorta4.startTime
+
+#Porta Masculino
+ROUTE RelogioPorta5.fraction_changed TO	PortaInterp5.set_fraction
+ROUTE PortaInterp5.value_changed TO	PortaInterna1.rotation
+ROUTE RelogioPorta6.fraction_changed TO	PortaInterp6.set_fraction
+ROUTE PortaInterp6.value_changed TO	PortaInterna1.rotation
+
+ROUTE SensorToque3.touchTime TO Sc3.touchedDoor
+ROUTE Sc3.startTime_Open TO RelogioPorta5.startTime
+ROUTE Sc3.startTime_Close TO RelogioPorta6.startTime
+
+#Banheiro Feminino
+ROUTE RelogioPorta7.fraction_changed TO	PortaInterp7.set_fraction
+ROUTE PortaInterp7.value_changed TO	PortaInterna2.rotation
+ROUTE RelogioPorta8.fraction_changed TO	PortaInterp8.set_fraction
+ROUTE PortaInterp8.value_changed TO	PortaInterna2.rotation
+
+ROUTE SensorToque4.touchTime TO Sc4.touchedDoor
+ROUTE Sc4.startTime_Open TO RelogioPorta7.startTime
+ROUTE Sc4.startTime_Close TO RelogioPorta8.startTime
+
+#Porta Externa
+ROUTE RelogioPorta9.fraction_changed TO	PortaInterp9.set_fraction
+ROUTE PortaInterp9.value_changed TO	PortaExterna.rotation
+ROUTE RelogioPorta0.fraction_changed TO	PortaInterp0.set_fraction
+ROUTE PortaInterp0.value_changed TO	PortaExterna.rotation
+
+ROUTE SensorToque5.touchTime TO Sc5.touchedDoor
+ROUTE Sc5.startTime_Open TO RelogioPorta9.startTime
+ROUTE Sc5.startTime_Close TO RelogioPorta0.startTime
